@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-    Chat
+    Chat {{now}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,12 +12,12 @@
       <ion-title size="large">Chat</ion-title>
     </ion-toolbar>
   </ion-header>
-  <h1 *ngIf="titleVisible">{{title}}</h1>
-  <h2 *ngIf="titleVisible">{{subTitle}}</h2>
+  <h1 *ngIf="titleVisible">{{now}}</h1>
 
   <div id="output-area">
   </div>
   <div id="input-area">
+    <input>
   </div>
 
 

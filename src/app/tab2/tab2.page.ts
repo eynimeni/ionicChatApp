@@ -6,16 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  public title = 'Chat';
-  public subTitle = `von ${new Date().toISOString()}`;
+
+  //kapseln?
+  public entireDate = new Date();
+  public time = this.entireDate.toTimeString().slice(0,5)
+  public date = this.entireDate.toDateString()
+
+  public now = `on ${this.date} ${this.time}`;
   public titleVisible = false;
-  //public names = ['Max Mustermann', 'John Doe', 'Jane Doe', 'Hans Wurst', 'Frederike Feuerrot'];
+
 
   constructor() {}
 
+
   public sendMessage():void {
     this.titleVisible = !this.titleVisible
+    console.log(this.entireDate.toDateString())
+    console.log(this.entireDate.toTimeString())
+    console.log(this.entireDate.toTimeString().slice(0,5))
+
   }
+
+
 
  /* public handleButtonClick():void {
     //this.title = 'New angular demo changed at' + new Date().toISOString();
