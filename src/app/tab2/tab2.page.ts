@@ -15,6 +15,8 @@ export class Tab2Page {
   public now = `on ${this.date} ${this.time}`;
   public titleVisible = false;
 
+  inputValue: string = "";
+  labelText: string= "";
 
   constructor() {}
 
@@ -25,6 +27,10 @@ export class Tab2Page {
     console.log(this.entireDate.toTimeString())
     console.log(this.entireDate.toTimeString().slice(0,5))
 
+    console.log(this.inputValue);
+    this.labelText = this.inputValue;
+
+
   }
 
 
@@ -34,4 +40,6 @@ export class Tab2Page {
     this.title = `New angular demo changed at ${new Date().toISOString()}`;
     this.subTitleVisible = !this.subTitleVisible;
   }*/
+
+
 }
