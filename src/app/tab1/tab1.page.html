@@ -24,9 +24,8 @@
   </ion-list>
 
   <ion-list *ngFor="let chat of chats">
-    <!--*ngIf="chatDisplayTab1"-->
     <ion-item>
-      <h2>{{chat.date}} {{chat.time}}</h2>
+      <h2>Chat on <br> {{chat.date}} {{chat.time}}</h2>
       <ion-label>
         <ion-list *ngFor="let message of chat.messages">
           <ion-item>
