@@ -1,3 +1,5 @@
+<ion-app>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -12,36 +14,32 @@
       <ion-title size="large">Chat</ion-title>
     </ion-toolbar>
   </ion-header>
-  <h1 *ngIf="titleVisible">{{now}}</h1>
-
-  <div id="output-area">
-  </div>
-  <div id="input-area">
-    <input>
-  </div>
-
-
-
-  <ion-content>
-    <ion-item>
-      <ion-label>
-        {{labelText}}
-      </ion-label>
-    </ion-item>
-
-    <ion-list>
-      <ion-item>
-        <ion-input type="text" text-right id="input" [(ngModel)]="inputValue"></ion-input>
+    <ion-list *ngFor="let message of messages">
+      <ion-item >
+        <ion-label>
+          <div class = "senderText">{{message.text}}
+            <p class = "time">{{message.time}}</p>
+          </div>
+        </ion-label>
       </ion-item>
       <ion-item>
-        <button (click)="sendMessage()">Send</button>
+          <ion-label>
+            <div class = "answerText">{{message.text}}
+              <p class = "time">{{message.time}}</p>
+            </div>
+          </ion-label>
       </ion-item>
-
     </ion-list>
-  </ion-content>
-
-
-
+    <ion-item>
+        <ion-label color="primary">Message:</ion-label>
+        <ion-input type="text" text-right id="input" [(ngModel)]="inputValue" ></ion-input>
+        <button (click)="sendMessage()" class="sendButton">Send</button>
+    </ion-item>
+    <ion-item *ngIf="sendButtonVisible">
+      <button (click)="saveChat()" class="saveButton">Save this Chat</button>
+      <button (click)="emptyChat()" class="emptyButton">Empty Area</button>
+    </ion-item>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
+</ion-app>

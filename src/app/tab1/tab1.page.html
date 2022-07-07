@@ -1,3 +1,4 @@
+<ion-app>
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -13,5 +14,33 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-list>
+    <ion-item >
+      <button (click)="startChat()"> Start New Chat </button>
+    </ion-item>
+    <ion-item >
+      <button (click)="viewChats()"> Display Saved Chats </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngFor="let chat of chats">
+    <!--*ngIf="chatDisplayTab1"-->
+    <ion-item>
+      <h2>{{chat.date}} {{chat.time}}</h2>
+      <ion-label>
+        <ion-list *ngFor="let message of chat.messages">
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <h3>{{message.text}}</h3>
+              <p>{{message.time}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
+</ion-app>

@@ -1,0 +1,39 @@
+.senderText {
+  border-radius: 16px;
+  background-color: palevioletred;
+  padding: 10px;
+  align-content: end;
+  margin-left: 40px;
+  text-align: end;
+}
+
+.answerText {
+  border-radius: 16px;
+  background-color: navajowhite;
+  padding: 10px;
+  align-content: start;
+  margin-right: 40px;
+}
+
+.time {
+  font-size: x-small;
+}
+
+button {
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.sendButton {
+  background-color: orange;
+}
+
+.saveButton {
+
+  background-color: lightblue;
+  align-self: end;
+}
+.emptyButton {
+
+  align-self: end;
+}
