@@ -26,7 +26,6 @@ export class Tab2Page {
 
   currentChat: Array<Message> = [];
 
-
   constructor(protected currentChatStorageService: CurrentChatStorageService,
               protected globalChatStorageService: GlobalChatStorageService) {
   }
@@ -37,21 +36,22 @@ export class Tab2Page {
   }
 
   public async saveMessage(): Promise<void> {
-    this.messages.push({text: this.inputValue, time: this.time})
+    this.messages.push({text: this.inputValue, time: new Date().toTimeString().slice(0,5)})
     await this.currentChatStorageService.save(this.messages);
     this.currentChat = await this.currentChatStorageService.get()
-    console.log(this.currentChat);
   }
 
 
   public async saveChat(): Promise<void> {
     this.chats.push({messages: this.currentChat, date: this.date, time: this.time})
     await this.globalChatStorageService.save(this.chats);
-    const result = await this.globalChatStorageService.get()
-    console.log(result)
+    //const result = await this.globalChatStorageService.get()
   }
 
  public emptyChat(): void {
-  this.messages.splice(0)
+  this.messages.splice(0);
+  this.entireDate = new Date();
+  this.time = this.entireDate.toTimeString().slice(0,5);
+  this.date = this.entireDate.toDateString()
   }
 }

@@ -32,12 +32,12 @@
     </ion-list>
     <ion-item>
         <ion-label color="primary">Message:</ion-label>
-        <ion-input type="text" text-right id="input" [(ngModel)]="inputValue" ></ion-input>
+        <ion-input type="text" id="input" [(ngModel)]="inputValue"></ion-input>
         <button (click)="sendMessage()" class="sendButton">Send</button>
     </ion-item>
     <ion-item *ngIf="sendButtonVisible">
       <button (click)="saveChat()" class="saveButton">Save this Chat</button>
-      <button (click)="emptyChat()" class="emptyButton">Empty Area</button>
+      <button (click)="emptyChat()" class="emptyButton">Start New Chat</button>
     </ion-item>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>

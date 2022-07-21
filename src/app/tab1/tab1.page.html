@@ -25,12 +25,12 @@
 
   <ion-list *ngFor="let chat of chats">
     <ion-item>
-      <h2>Chat on <br> {{chat.date}} {{chat.time}}</h2>
+      <div>Chat from <br> {{chat.date}} {{chat.time}}</div>
       <ion-label>
         <ion-list *ngFor="let message of chat.messages">
           <ion-item>
             <ion-label class="ion-text-wrap">
-              <h3>{{message.text}}</h3>
+              <h5>{{message.text}}</h5>
               <p>{{message.time}}</p>
             </ion-label>
           </ion-item>
@@ -38,7 +38,6 @@
       </ion-label>
     </ion-item>
   </ion-list>
-
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
